@@ -1,13 +1,13 @@
 import { log } from "./log.mjs";
-import { s3 } from "@aws-sdk/client-s3";
+import { S3 } from "@aws-sdk/client-s3";
 
-const s3Client = new s3({ region : 'us-east-2' })
+const s3Client = new S3({ region : 'us-east-2' })
 
 export const handler = async(event, _, callback) => {
 
     const record = event.Records[0];
-    const Bucket = record.s3.bucket.name;
-    const key = record.s3.object.key;
+    const Bucket = record.S3.bucket.name;
+    const key = record.S3.object.key;
     const getObjectResult = s3Client.getObject({
         Bucket,
         key,
