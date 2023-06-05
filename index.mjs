@@ -13,11 +13,11 @@ export const handler = async(event) => {
     const mega_byte = 1024 * 1024;
 
     if (getObjectResult.ContentLength > 1 * mega_byte) {
-        log('Objeto muito grande');
+        log('Objeto muito grande!');
 
-        return 'Objeto muito grande';
+        return 'Objeto muito grande!';
     }
 
-    log('Objeto de tamanho OK');
-    return 'Objeto de tamanho OK';
+    log('Objeto de tamanho OK!');
+    return 'Objeto de tamanho OK!';
 };
